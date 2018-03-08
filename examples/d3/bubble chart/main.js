@@ -5,4 +5,8 @@ const bubbleChart = function(){
     function chart(selection){
 
     }
+
+    return chart;
 }
+
+console.log(bubbleChart.width)
