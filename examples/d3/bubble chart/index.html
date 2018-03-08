@@ -5,9 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Bubble Chart</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="../d3.v4.js"></script>
     <script src="main.js"></script>
 </head>
 <body>
-    
+    <div class="chart-example" id="chart"><svg></svg></div>
+
+    <script>
+        
+        d3.json("../../../data-sets/top-100-players-pergame-2016-17.json", function(err, data){
+            if(err){
+                throw err;
+            }
+            
+            let chart = bubbleChart().width(600).height(400);
+            let players = data;
+            d3.select('#chart').datum(players).call(chart);
+        })
+    </script>
+
 </body>
 </html>
