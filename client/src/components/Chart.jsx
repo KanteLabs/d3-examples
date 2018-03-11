@@ -1,10 +1,18 @@
 import React, { Component } from 'react';
+import ReactHighCharts from 'react-highcharts';
+
 
 class Chart extends Component {
+    constructor(){
+        super();
+        this.state - {
 
+        }
+    }
+    
     render(){
         return(
-            <h1>cat</h1>
+            <h1></h1>
         )
     }
 }
