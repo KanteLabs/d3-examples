@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import stats from '../data/top-100-players-pergame-2016-17';
 import ReactHighCharts from 'react-highcharts';
 
 
@@ -9,8 +10,8 @@ class Chart extends Component {
 
         }
     }
-    
     render(){
+        console.log(stats)
         return(
             <h1></h1>
         )
