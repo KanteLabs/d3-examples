@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import Chart from './components/Chart';
+import Linechart from './components/Linechart';
 import './App.css';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Chart />
+        <Linechart />
       </div>
     );
   }
