@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import stats from '../data/top-100-players-pergame-2016-17';
-// import ReactHighCharts from 'react-highcharts';
 import {LineChart, Line, XAxis, Tooltip, CartesianGrid, YAxis, Legend, ResponsiveContainer } from 'recharts';
 
 const data = [

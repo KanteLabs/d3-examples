@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Linechart from './components/Linechart';
+import TwoLevelPieChart from './components/RadarChart';
 import './App.css';
 
 class App extends Component {
@@ -7,6 +8,7 @@ class App extends Component {
     return (
       <div className="App">
         <Linechart />
+        <TwoLevelPieChart/>
       </div>
     );
   }
