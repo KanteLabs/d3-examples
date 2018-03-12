@@ -15,9 +15,16 @@ class SelectPlayer extends Component {
         })
     }
 
+    handleChange = (e) => {
+        let name = e.target.value;
+
+        this.props.passPlayersName(name)
+        console.log(name)
+    }
+
     renderNames = () => {
         return(
-            <select className="player-list" name="player-name" onChange={(e)=>console.log(e.target.value)}>
+            <select className="player-list" name="player-name" onChange={(e)=>this.handleChange(e)}>
                 {Object.values(playerNames).map((item, i)=>{
                     return(
                         <option value={item.player} key={i}>{item.player}</option>
