@@ -26,8 +26,6 @@ class  TwoLevelPieChart extends Component {
 
     shouldComponentUpdate(nextProps, nextState) {
         if(nextState.currentPlayer !== this.state.currentPlayer){
-            // this.forceUpdate()
-            // console.log(true)
             return true;
         }else{
             return false;
@@ -60,8 +58,8 @@ class  TwoLevelPieChart extends Component {
                 <PolarGrid />
                 <PolarAngleAxis dataKey="category" />
                 <PolarRadiusAxis angle={30} domain={[0, 13]} />
-                <Radar name="LeBron James" dataKey="player_one" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} dot/>
-                <Radar name={this.state.currentPlayer.toString()} dataKey="player_two" stroke="#82ca9d" fill="#82ca9d" fillOpacity={0.6} dot/>
+                <Radar name="LeBron James" dataKey="player_one" stroke="#FFB81C" fill="#6F263D" fillOpacity={0.8} dot activeDot={{r: 6}} />
+                <Radar name={this.state.currentPlayer.toString()} dataKey="player_two" stroke="#041E42" fill="#000000" fillOpacity={0.6} dot />
                 <Legend />
                 <Tooltip />
             </RadarChart>
