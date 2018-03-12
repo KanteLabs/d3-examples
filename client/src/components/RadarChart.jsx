@@ -3,15 +3,15 @@ import SelectPlayer from './SelectPlayer';
 import stats from '../data/top-100-players-pergame-2016-17';
 
 import {Radar, RadarChart, PolarGrid, Legend,
-    PolarAngleAxis, PolarRadiusAxis, Tooltip} from 'recharts';
+    PolarAngleAxis, PolarRadiusAxis, Tooltip, Label} from 'recharts';
 
 const data = [
-    {category: 'Points', player_one: 26.4, player_two: 30, cap: 30},
+    {category: 'Points Per Game', player_one: 26.4, player_two: 30, cap: 30},
     {category: 'Steals', player_one: 1.2, player_two: 30, cap: 30},
     {category: 'Rebounds', player_one: 8.6, player_two: 30, cap: 30},
     {category: 'Assists', player_one:8.7, player_two: 30, cap: 30},
     {category: 'Free Throws', player_one: 4.8, player_two: 30, cap: 30},
-    {category: 'Threes', player_one: 1.7, player_two: 30, cap: 30},
+    {category: '3 Pointers', player_one: 1.7, player_two: 30, cap: 30},
 ];
 
 class  TwoLevelPieChart extends Component {
