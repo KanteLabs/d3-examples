@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Linechart from './components/Linechart';
+// import Linechart from './components/Linechart';
 import TwoLevelPieChart from './components/RadarChart';
 import { ResponsiveContainer } from 'recharts';
 import './App.css';

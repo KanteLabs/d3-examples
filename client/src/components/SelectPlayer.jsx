@@ -1,46 +1,28 @@
-import React, { Component } from 'react';
-import playerNames from '../data/player-names';
+import React from 'react';
 
-class SelectPlayer extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            playerList: {}
-        }
-    }
-
-    componentDidMount() {
-        this.setState({
-            playerList: playerNames
-        })
-    }
-
-    handleChange = (e) => {
-        let name = e.target.value;
-
-        this.props.passPlayersName(name)
-        console.log(name)
-    }
-
-    renderNames = () => {
-        return(
-            <select className="player-list" name="player-name" onChange={(e)=>this.handleChange(e)}>
-                {Object.values(playerNames).map((item, i)=>{
-                    return(
-                        <option value={item.player} key={i}>{item.player}</option>
-                    )
-                })}
-            </select>
-        )
-    }
-    render(){
+const SelectPlayer = (props) => {
+    
+    
+    const renderNames = () => {
+        const { playerNames } = props;
+        
         return(
             <div className="player-names">
                 <label htmlFor="payler-list">Player: </label>
-                {this.renderNames()}
+                <select className="player-list" name="player-name" onChange={(e)=>props.handleChange(e)}>
+                    {Object.values(playerNames).map((item, i)=>{
+                        return(
+                            <option value={item} key={i}>{item}</option>
+                        )
+                    })}
+                </select>
             </div>
         )
     }
+
+    return(
+        props.playerNames ? renderNames() : null
+    )
 }
 
 export default SelectPlayer;
