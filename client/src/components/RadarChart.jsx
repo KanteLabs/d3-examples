@@ -4,7 +4,7 @@ import stats from '../data/top-100-players-pergame-2016-17';
 import players from '../data/player-names';
 
 import {Radar, RadarChart, PolarGrid, Legend,
-    PolarAngleAxis, PolarRadiusAxis, Tooltip, Label} from 'recharts';
+    PolarAngleAxis, PolarRadiusAxis, Tooltip, Label, ResponsiveContainer} from 'recharts';
 
     
     
@@ -54,16 +54,19 @@ class  TwoLevelPieChart extends Component {
         
         return (
             <div>
-            <RadarChart cx={300} cy={250} outerRadius={150} width={600} height={500} data={data}>
-                <PolarGrid />
-                <PolarAngleAxis dataKey="category" />
-                <PolarRadiusAxis angle={30} domain={[0, 13]} />
-                <Radar name="LeBron James" dataKey="player_one" stroke="#FFB81C" fill="#6F263D" fillOpacity={0.8} dot activeDot={{r: 6}} />
-                <Radar name={this.state.currentPlayer.toString()} dataKey="player_two" stroke="#041E42" fill="#000000" fillOpacity={0.6} dot />
-                <Legend />
-                <Tooltip />
-            </RadarChart>
-            <SelectPlayer passPlayersName={(name)=>this.plotPlayer(name)}/>
+                {/* <RadarChart cx={300} cy={250} outerRadius={200} width={500} height={500} data={data}> */}
+                <ResponsiveContainer width='100%' height={300}>
+                <RadarChart cx='50%' cy='50%' outerRadius='80%' data={data}>
+                    <PolarGrid />
+                    <PolarAngleAxis dataKey="category" />
+                    <PolarRadiusAxis angle={30} domain={[0, 15]} />
+                    <Radar name="LeBron James" dataKey="player_one" stroke="#FFB81C" fill="#6F263D" fillOpacity={0.8} dot activeDot={{r: 6}} strokeWidth="2" />
+                    <Radar name={this.state.currentPlayer.toString()} dataKey="player_two" stroke="#041E42" fill="#000000" fillOpacity={0.6} dot strokeWidth="2" />
+                    <Legend />
+                    <Tooltip />
+                </RadarChart>
+                </ResponsiveContainer>
+                <SelectPlayer passPlayersName={(name)=>this.plotPlayer(name)}/>
             </div>
         );
     }

@@ -1,3 +1,11 @@
 .App {
   text-align: center;
 }
+
+g {
+  stroke-width: 2px;
+}
+text.recharts-text.recharts-polar-radius-axis-tick-value{
+  /* stroke: black; */
+  fill: black;
+}
