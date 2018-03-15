@@ -36,6 +36,7 @@ class SelectPlayer extends Component {
     render(){
         return(
             <div className="player-names">
+                <label htmlFor="payler-list">Player: </label>
                 {this.renderNames()}
             </div>
         )

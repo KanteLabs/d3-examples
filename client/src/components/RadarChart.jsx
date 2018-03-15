@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import SelectPlayer from './SelectPlayer';
+import FilterGameType from './FilterGameType';
 import stats from '../data/top-100-players-pergame-2016-17';
 import players from '../data/player-names';
 
@@ -49,24 +50,31 @@ class  TwoLevelPieChart extends Component {
         })
     }
 
+    handleFilter = (e) => {
+        let filter = e.target.value;
+        console.log(filter)
+    }
+
     render () {
         const { data } = this.state;
         
         return (
             <div>
-                {/* <RadarChart cx={300} cy={250} outerRadius={200} width={500} height={500} data={data}> */}
                 <ResponsiveContainer width='100%' height={300}>
-                <RadarChart cx='50%' cy='50%' outerRadius='80%' data={data}>
-                    <PolarGrid />
-                    <PolarAngleAxis dataKey="category" />
-                    <PolarRadiusAxis angle={30} domain={[0, 15]} />
-                    <Radar name="LeBron James" dataKey="player_one" stroke="#FFB81C" fill="#6F263D" fillOpacity={0.8} dot activeDot={{r: 6}} strokeWidth="2" />
-                    <Radar name={this.state.currentPlayer.toString()} dataKey="player_two" stroke="#041E42" fill="#000000" fillOpacity={0.6} dot strokeWidth="2" />
-                    <Legend />
-                    <Tooltip />
-                </RadarChart>
+                    <RadarChart cx='50%' cy='50%' outerRadius='80%' data={data}>
+                        <PolarGrid />
+                        <PolarAngleAxis dataKey="category" />
+                        <PolarRadiusAxis angle={30} domain={[0, 15]} />
+                        <Radar name="LeBron James" dataKey="player_one" stroke="#FFB81C" fill="#6F263D" fillOpacity={0.8} dot activeDot={{r: 6}} strokeWidth="2" />
+                        <Radar name={this.state.currentPlayer.toString()} dataKey="player_two" stroke="#041E42" fill="#000000" fillOpacity={0.6} dot strokeWidth="2" />
+                        <Legend />
+                        <Tooltip />
+                    </RadarChart>
                 </ResponsiveContainer>
-                <SelectPlayer passPlayersName={(name)=>this.plotPlayer(name)}/>
+                <div className="radar-options">
+                    <FilterGameType passFilterProp={(e)=>this.handleFilter(e)} />
+                    <SelectPlayer passPlayersName={(name)=>this.plotPlayer(name)}/>
+                </div>
             </div>
         );
     }
