@@ -27,12 +27,12 @@ class  TwoLevelPieChart extends Component {
                 {category: 'Field Goals', player_one: 9.9, player_two: RegularStats["Stephen Curry"].FGM, cap: 30},
             ],
             playoffData: [
-                {category: 'Steals', player_one: 1.2, player_two: PlayoffStats["Stephen Curry"].STL, cap: 30},
-                {category: 'Rebounds', player_one: 8.6, player_two: PlayoffStats["Stephen Curry"].REB, cap: 30},
-                {category: 'Assists', player_one:8.7, player_two: PlayoffStats["Stephen Curry"].AST, cap: 30},
-                {category: 'Free Throws', player_one: 4.8, player_two: PlayoffStats["Stephen Curry"].FTM, cap: 30},
-                {category: 'Turnovers', player_one: 4.1, player_two: PlayoffStats["Stephen Curry"].TOV, cap: 30},
-                {category: 'Field Goals', player_one: 9.9, player_two: PlayoffStats["Stephen Curry"].FGM, cap: 30},
+                {category: 'Steals', player_one: PlayoffStats["LeBron James"].STL, player_two: PlayoffStats["Stephen Curry"].STL, cap: 30},
+                {category: 'Rebounds', player_one: PlayoffStats["LeBron James"].REB, player_two: PlayoffStats["Stephen Curry"].REB, cap: 30},
+                {category: 'Assists', player_one: PlayoffStats["LeBron James"].AST, player_two: PlayoffStats["Stephen Curry"].AST, cap: 30},
+                {category: 'Free Throws', player_one: PlayoffStats["LeBron James"].FTM, player_two: PlayoffStats["Stephen Curry"].FTM, cap: 30},
+                {category: 'Turnovers', player_one: PlayoffStats["LeBron James"].TOV, player_two: PlayoffStats["Stephen Curry"].TOV, cap: 30},
+                {category: 'Field Goals', player_one: PlayoffStats["LeBron James"].FGM, player_two: PlayoffStats["Stephen Curry"].FGM, cap: 30},
             ]
         }
     }
